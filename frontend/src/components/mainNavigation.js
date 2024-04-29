@@ -1,18 +1,17 @@
+import { Link } from "react-router-dom";
+import NewsletterSignup from "./newsletterSignup";
 import classes from "./mainNavigation.module.css";
 
 function MianNavigation() {
   return (
     <nav>
-      <div className={classes.nav}>
-        <li>Home</li>
-        <li>Events</li>
-        <li>NewsLetter</li>
-      </div>
+      <ul className={classes.list}>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/events"}>Events</Link>
+        <Link to={"/newsletter"}>NewsLetter</Link>
+      </ul>
 
-      <div className={classes.signup}>
-        <input type="text" placeholder="Sign up now" />
-        <button type="button">Sign Up</button>
-      </div>
+      <NewsletterSignup />
     </nav>
   );
 }

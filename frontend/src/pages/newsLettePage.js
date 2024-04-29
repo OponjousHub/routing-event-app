@@ -1,7 +1,15 @@
+import NewsletterSignup from "../components/newsletterSignup";
+import MianNavigation from "../components/mainNavigation";
+import classes from "./newsLetterPage.module.css";
+
 function NewsLetterPage() {
   return (
     <>
-      <h1>This is NewsLetter Page</h1>
+      <MianNavigation />
+      <div className={classes.newsletter_box}>
+        <h1>Join our awesome newsletter!</h1>
+        <NewsletterSignup />
+      </div>
     </>
   );
 }

@@ -5,10 +5,10 @@ nav {
   max-width: 80%;
   margin: 30px auto;
 }
-.nav {
+.list {
   display: flex;
 }
-.nav li {
+.list a {
   list-style-type: none;
   padding: 0 20px;
   color: #fbd997;
