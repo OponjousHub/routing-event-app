@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 30px auto;
+}
+.nav {
+  display: flex;
+}
+.nav li {
+  list-style-type: none;
+  padding: 0 20px;
+  color: #fbd997;
+  cursor: pointer;
+}
+.signup {
+}
+.signup input {
+  font-size: 12px;
+  padding: 7px;
+  border: none;
+}
+.signup button {
+  font-size: 12px;
+  padding: 7px;
+  border: none;
+}
