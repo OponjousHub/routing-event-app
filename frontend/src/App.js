@@ -7,6 +7,7 @@ import EventDetailPage from "./pages/eventDetailPage";
 import EventRootLayout from "./pages/eventRootLayout";
 import RootLayout from "./pages/RootLayout";
 import EventList from "./pages/eventListPage";
+import ErrorPage from "./pages/errorPage";
 
 import "./App.css";
 
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       { path: "/newsletter", element: <NewsLetterPage /> },
