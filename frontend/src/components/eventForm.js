@@ -1,8 +1,9 @@
+import { Form } from "react-router-dom";
 import classes from "./eventForm.module.css";
 
 function EventForm() {
   return (
-    <form className={classes.form_box}>
+    <Form method="post" className={classes.form_box}>
       <div>
         <label htmlFor="title">Title</label>
         <input id="title" name="title" type="text" />
@@ -23,7 +24,7 @@ function EventForm() {
         <button type="button">Cancel</button>
         <button>Save</button>
       </p>
-    </form>
+    </Form>
   );
 }
 export default EventForm;
