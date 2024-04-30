@@ -1,16 +1,21 @@
-import MianNavigation from "../components/mainNavigation";
+import { NavLink } from "react-router-dom";
 import classes from "./eventsPage.module.css";
 function EventPage() {
   return (
     <>
-      <MianNavigation />
       <ul className={classes.event_tabs}>
-        <li>
+        <NavLink
+          to={"/events"}
+          className={({ isActive }) => (isActive ? classes.active : "")}
+        >
           <button>All Events</button>
-        </li>
-        <li>
+        </NavLink>
+        <NavLink
+          to={"new"}
+          className={({ isActive }) => (isActive ? classes.active : "")}
+        >
           <button>New Events</button>
-        </li>
+        </NavLink>
       </ul>
     </>
   );

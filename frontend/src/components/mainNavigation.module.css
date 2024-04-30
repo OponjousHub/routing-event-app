@@ -9,10 +9,17 @@ nav {
   display: flex;
 }
 .list a {
+  text-decoration: none;
   list-style-type: none;
-  padding: 0 20px;
+  padding: 0 17px;
   color: #fbd997;
   cursor: pointer;
+  letter-spacing: 1.4px;
+}
+.list a:hover,
+.list a.active {
+  color: #e4b14d;
+  text-decoration: underline;
 }
 .signup {
 }
