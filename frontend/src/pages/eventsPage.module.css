@@ -12,5 +12,22 @@
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  background-color: #c4c0c0;
+}
+
+.event_tabs {
+  display: flex;
+}
+.event_tabs button {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 9px 18px;
+  color: #fbd997;
+  cursor: pointer;
+  letter-spacing: 1.4px;
+  background-color: #999;
+}
+.event_tabs button:hover,
+.event_tabs button.active {
+  background-color: #e4b14d;
+  color: #444;
 }

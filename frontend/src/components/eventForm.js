@@ -9,7 +9,7 @@ function EventForm() {
       </div>
       <div>
         <label htmlFor="image">Image</label>
-        <img id="image" name="image" alt="" />
+        <input id="image" name="image" />
       </div>
       <div>
         <label htmlFor="date">Date</label>
@@ -17,9 +17,9 @@ function EventForm() {
       </div>
       <div>
         <label htmlFor="description">Description</label>
-        <textarea id="description" name="description"></textarea>
+        <textarea id="description" name="description" rows={5}></textarea>
       </div>
-      <p>
+      <p className={classes.form_button}>
         <button type="button">Cancel</button>
         <button>Save</button>
       </p>

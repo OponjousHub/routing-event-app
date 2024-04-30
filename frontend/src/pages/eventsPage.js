@@ -4,18 +4,23 @@ function EventPage() {
   return (
     <>
       <ul className={classes.event_tabs}>
-        <NavLink
-          to={"/events"}
-          className={({ isActive }) => (isActive ? classes.active : "")}
-        >
-          <button>All Events</button>
-        </NavLink>
-        <NavLink
-          to={"new"}
-          className={({ isActive }) => (isActive ? classes.active : "")}
-        >
-          <button>New Events</button>
-        </NavLink>
+        <li>
+          <NavLink
+            to={"/events"}
+            className={({ isActive }) => (isActive ? classes.active : " ")}
+            end
+          >
+            <button>All Events</button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to={"new"}
+            className={({ isActive }) => (isActive ? classes.active : " ")}
+          >
+            <button>New Events</button>
+          </NavLink>
+        </li>
       </ul>
     </>
   );
