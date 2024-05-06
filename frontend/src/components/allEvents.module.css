@@ -1,0 +1,38 @@
+.events_box {
+  width: 600px;
+  height: 120px;
+  margin: 2px auto;
+}
+.event_box h1 {
+  text-align: left !important;
+}
+
+.list {
+  display: flex;
+  gap: 4px;
+}
+
+.events {
+  background-color: #333;
+  margin-bottom: 10px;
+}
+.events a {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.events img {
+  width: 40%;
+  height: 120px;
+}
+.text_box {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: start; */
+  color: aliceblue;
+}
+.text_box p {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}

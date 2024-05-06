@@ -1,11 +1,13 @@
 import { json, redirect, useLoaderData } from "react-router-dom";
 import EventForm from "../components/eventForm";
+import EventNavigation from "../components/eventsNavigation";
 
 function NewEventPage() {
   const data = useLoaderData();
   console.log(data);
   return (
     <>
+      <EventNavigation />
       <EventForm />
     </>
   );
@@ -23,11 +25,12 @@ export async function action({ request, params }) {
   };
   console.log(enteredData);
   console.log(data);
-  const response = await fetch("http://localhost:8080/eventser", {
+  const response = await fetch("http://localhost:8080/events", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(enteredData),
   });
+  console.log(response);
   if (!response.ok)
     throw json(
       { message: "Could not save the event! Please try aain later." },

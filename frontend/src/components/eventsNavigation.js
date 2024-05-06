@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import classes from "./eventsPage.module.css";
-function EventPage() {
+import classes from "./eventsNavigation.module.css";
+function EventNavigation() {
   return (
     <>
       <ul className={classes.event_tabs}>
@@ -25,4 +25,4 @@ function EventPage() {
     </>
   );
 }
-export default EventPage;
+export default EventNavigation;
