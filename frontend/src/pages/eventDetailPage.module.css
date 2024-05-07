@@ -26,6 +26,10 @@
   justify-content: center;
   gap: 30px;
 }
+.edit_delete a {
+  text-decoration: none;
+  color: aliceblue;
+}
 .edit,
 .delete {
   cursor: pointer;
@@ -33,4 +37,11 @@
 .edit:hover,
 .delete:hover {
   color: var(--color-primary-600);
+}
+.delete {
+  padding: 0 !important;
+  background-color: transparent;
+  border: none;
+  color: aliceblue;
+  letter-spacing: 2px;
 }

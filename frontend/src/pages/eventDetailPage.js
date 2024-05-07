@@ -1,15 +1,15 @@
-import { useLoaderData, json } from "react-router-dom";
+import { useRouteLoaderData, json, Link } from "react-router-dom";
 import EventNavigation from "../components/eventsNavigation";
 import classes from "./eventDetailPage.module.css";
 function EventDetailPage() {
-  const data = useLoaderData();
+  const data = useRouteLoaderData("editDetailId");
   console.log(data.event);
   const { event } = data;
 
   return (
     <>
       <EventNavigation />
-      <div className={classes.container}>
+      <article className={classes.container}>
         <div className={classes.event_box}>
           <img src={event.image} alt={event.title} />
           <div className={classes.title_date}>
@@ -18,11 +18,14 @@ function EventDetailPage() {
           </div>
           <p className={classes.description}>{event.description}</p>
         </div>
-        <div className={classes.edit_delete}>
-          <p className={classes.edit}>Edit</p>
-          <p className={classes.delete}>Delete</p>
-        </div>
-      </div>
+        <menu className={classes.edit_delete}>
+          <Link to={`edit`} className={classes.edit}>
+            Edit
+          </Link>
+
+          <button className={classes.delete}>Delete</button>
+        </menu>
+      </article>
     </>
   );
 }
