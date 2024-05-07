@@ -8,7 +8,7 @@ function AllEvents({ events }) {
       <ul>
         {events.map((event) => (
           <li key={event.id} className={classes.events}>
-            <Link to={"eventId"} className={classes.list_link}>
+            <Link to={event.id} className={classes.list_link}>
               <div className={classes.list}>
                 <img src={event.image} alt={event.title} />
                 <div className={classes.text_box}>
