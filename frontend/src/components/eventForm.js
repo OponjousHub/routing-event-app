@@ -1,9 +1,9 @@
-import { Form } from "react-router-dom";
+import { json, redirect, Form } from "react-router-dom";
 import classes from "./eventForm.module.css";
 
-function EventForm({ event }) {
+function EventForm({ event, method }) {
   return (
-    <Form method="post" className={classes.form_box}>
+    <Form method={method} className={classes.form_box}>
       <div>
         <label htmlFor="title">Title</label>
         <input
@@ -51,3 +51,33 @@ function EventForm({ event }) {
   );
 }
 export default EventForm;
+
+export async function action({ request, params }) {
+  const method = request.method;
+  const data = await request.formData();
+  const enteredData = {
+    title: data.get("title"),
+    image: data.get("image"),
+    date: data.get("date"),
+    description: data.get("description"),
+  };
+
+  let url = "http://localhost:8080/events";
+  if (method === "PATCH") {
+    const editId = params.eventId;
+    url = "http://localhost:8080/events/" + editId;
+  }
+  const response = await fetch(url, {
+    method: method,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(enteredData),
+  });
+  console.log(response);
+  if (!response.ok)
+    throw json(
+      { message: "Could not save the event! Please try aain later." },
+      { status: "500" }
+    );
+
+  return redirect("/events");
+}
