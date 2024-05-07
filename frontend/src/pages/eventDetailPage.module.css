@@ -1,0 +1,36 @@
+.container {
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.event_box {
+  width: 550px;
+}
+.event_box img {
+  width: 100%;
+}
+.title_date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.date {
+  font-size: 14px;
+  color: #888;
+}
+.description {
+  font-size: 16px;
+}
+.edit_delete {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.edit,
+.delete {
+  cursor: pointer;
+}
+.edit:hover,
+.delete:hover {
+  color: var(--color-primary-600);
+}
