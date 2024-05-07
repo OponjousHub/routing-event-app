@@ -1,10 +1,16 @@
-import { useRouteLoaderData, json, Link } from "react-router-dom";
+import { useRouteLoaderData, json, Link, useSubmit } from "react-router-dom";
 import EventNavigation from "../components/eventsNavigation";
 import classes from "./eventDetailPage.module.css";
 function EventDetailPage() {
   const data = useRouteLoaderData("editDetailId");
+  const submit = useSubmit();
   console.log(data.event);
   const { event } = data;
+
+  const hadleDelete = () => {
+    const proceed = window.confirm("Are you sure?");
+    if (proceed) submit(null, { method: "delete" });
+  };
 
   return (
     <>
@@ -23,7 +29,9 @@ function EventDetailPage() {
             Edit
           </Link>
 
-          <button className={classes.delete}>Delete</button>
+          <button onClick={hadleDelete} className={classes.delete}>
+            Delete
+          </button>
         </menu>
       </article>
     </>
