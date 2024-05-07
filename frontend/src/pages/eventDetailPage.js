@@ -55,3 +55,5 @@ export async function loader({ request, params }) {
     return response;
   }
 }
+
+export async function deleteLoader() {}
