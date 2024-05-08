@@ -1,4 +1,4 @@
-import { json, redirect, Form } from "react-router-dom";
+import { json, redirect, Form, Link } from "react-router-dom";
 import classes from "./eventForm.module.css";
 
 function EventForm({ event, method }) {
@@ -44,7 +44,9 @@ function EventForm({ event, method }) {
         ></textarea>
       </div>
       <p className={classes.form_button}>
-        <button type="button">Cancel</button>
+        <Link to={"/events"}>
+          <button type="button">Cancel</button>
+        </Link>
         <button>Save</button>
       </p>
     </Form>

@@ -15,3 +15,15 @@ function NewsLetterPage() {
 }
 
 export default NewsLetterPage;
+
+export async function action({ request }) {
+  const data = await request.formData();
+  const email = data.get("email");
+  console.log(email);
+  ///////
+  // SEND THE EMAIL INPUT TO THE BACKEND
+  ////////
+  // CHAECK FOR THE ERROR
+
+  return { message: "Sign up successfully" };
+}
