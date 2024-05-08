@@ -54,8 +54,8 @@ export async function loader({ request, params }) {
 
   if (!response.ok) {
     throw json(
-      { message: "Could not fetch this event! Try again later." },
-      { status: "501" }
+      { message: "Could not fetch the selected event! Try again later." },
+      { status: "404" }
     );
   } else {
     return response;
