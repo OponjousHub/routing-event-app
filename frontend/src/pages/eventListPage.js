@@ -21,10 +21,10 @@ function EventList() {
 export default EventList;
 
 async function loadEvents() {
-  const response = await fetch("http://localhost:8080/events");
+  const response = await fetch("http://localhost:8080/eventss");
 
   if (!response.ok)
-    throw json({ message: "Could not fetch the events", status: "404" });
+    throw json({ message: "Could not fetch the events", status: 500 });
 
   const resData = await response.json();
 

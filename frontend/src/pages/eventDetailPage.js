@@ -55,7 +55,7 @@ export async function loader({ request, params }) {
   if (!response.ok) {
     throw json(
       { message: "Could not fetch the selected event! Try again later." },
-      { status: "404" }
+      { status: 404 }
     );
   } else {
     return response;
@@ -72,7 +72,7 @@ export async function action({ request, params }) {
   if (!response.ok) {
     throw json(
       { message: "Could not delete the selected event!" },
-      { status: "422" }
+      { status: 422 }
     );
   }
 
