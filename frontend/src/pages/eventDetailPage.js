@@ -1,4 +1,10 @@
-import { useRouteLoaderData, json, Link, useSubmit } from "react-router-dom";
+import {
+  useRouteLoaderData,
+  json,
+  Link,
+  useSubmit,
+  redirect,
+} from "react-router-dom";
 import EventNavigation from "../components/eventsNavigation";
 import classes from "./eventDetailPage.module.css";
 function EventDetailPage() {
@@ -56,4 +62,19 @@ export async function loader({ request, params }) {
   }
 }
 
-export async function deleteLoader() {}
+export async function action({ request, params }) {
+  const id = params.eventId;
+
+  const response = fetch("http://localhost:8080/events/" + id, {
+    method: request.method,
+  });
+
+  if (!response.ok) {
+    throw json(
+      { message: "Could not delete the selected event!" },
+      { status: "422" }
+    );
+  }
+
+  return redirect("events");
+}
