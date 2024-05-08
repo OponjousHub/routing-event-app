@@ -77,7 +77,7 @@ export async function action({ request, params }) {
   console.log(response);
   if (!response.ok)
     throw json(
-      { message: "Could not save the event! Please try aain later." },
+      { message: "Could not save the event! Please try again later." },
       { status: 500 }
     );
 
