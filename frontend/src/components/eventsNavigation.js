@@ -13,6 +13,7 @@ function EventNavigation() {
             <button>All Events</button>
           </NavLink>
         </li>
+
         <li>
           <NavLink
             to={"new"}

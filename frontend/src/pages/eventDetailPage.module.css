@@ -28,7 +28,8 @@
 }
 .edit_delete a {
   text-decoration: none;
-  color: aliceblue;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 .edit,
 .delete {
@@ -42,6 +43,9 @@
   padding: 0 !important;
   background-color: transparent;
   border: none;
-  color: aliceblue;
+  color: rgb(243, 91, 71);
   letter-spacing: 2px;
+}
+.edit {
+  color: rgb(146, 167, 233);
 }

@@ -4,8 +4,8 @@ function ErrorPage() {
   return (
     <>
       <MianNavigation />
-      <h1>An error has occured!</h1>
-      <p>something went wrong</p>
+      <h1 className={classes.head}>An error has occured!</h1>
+      <p className={classes.error}>something went wrong</p>
     </>
   );
 }

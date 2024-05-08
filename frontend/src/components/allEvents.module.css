@@ -3,8 +3,8 @@
   height: 120px;
   margin: 2px auto;
 }
-.event_box h1 {
-  /* text-align: left !important; */
+.allEvents_heading {
+  margin-top: 50px !important;
 }
 
 .list {
@@ -26,13 +26,13 @@
   height: 120px;
 }
 .text_box {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: start; */
+  padding-left: 20px;
   color: aliceblue;
 }
 .text_box p {
   margin-left: 0 !important;
   padding-left: 0 !important;
+}
+.date {
+  color: #999;
 }

@@ -4,7 +4,7 @@ import classes from "./allEvents.module.css";
 function AllEvents({ events }) {
   return (
     <div className={classes.events_box}>
-      <h1>All Events</h1>
+      <h1 className={classes.allEvents_heading}>All Events</h1>
       <ul>
         {events.map((event) => (
           <li key={event.id} className={classes.events}>
