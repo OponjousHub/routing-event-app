@@ -1,5 +1,4 @@
 import { Await, defer, json, useLoaderData } from "react-router-dom";
-import EventNavigation from "../components/eventsNavigation";
 import AllEvents from "../components/allEvents";
 import { Suspense } from "react";
 
@@ -8,7 +7,6 @@ function EventList() {
 
   return (
     <>
-      <EventNavigation />
       <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
         <Await resolve={events}>
           {(loadedEvents) => <AllEvents events={loadedEvents} />}

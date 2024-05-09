@@ -3,27 +3,63 @@ import classes from "./eventsNavigation.module.css";
 function EventNavigation() {
   return (
     <>
-      <ul className={classes.event_tabs}>
-        <li>
-          <NavLink
-            to={"/events"}
-            className={({ isActive }) => (isActive ? classes.active : "")}
-            end
-          >
-            <button>All Events</button>
-          </NavLink>
-        </li>
+      <nav className={classes.nav}>
+        <ul className={classes.list}>
+          <li>
+            <NavLink
+              to={"/events"}
+              className={({ isActive }) => (isActive ? classes.active : " ")}
+              end
+            >
+              All Events
+            </NavLink>
+          </li>
 
-        <li>
-          <NavLink
-            to={"new"}
-            className={({ isActive }) => (isActive ? classes.active : "")}
-          >
-            <button>New Events</button>
-          </NavLink>
-        </li>
-      </ul>
+          <li>
+            <NavLink
+              to={"new"}
+              className={({ isActive }) => (isActive ? classes.active : " ")}
+            >
+              New Events
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }
 export default EventNavigation;
+
+{
+  /* <nav>
+<ul className={classes.list}>
+  <li>
+    <NavLink
+      to={"/"}
+      className={({ isActive }) => (isActive ? classes.active : " ")}
+      end
+    >
+      Home
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to={"/events"}
+      className={({ isActive }) => (isActive ? classes.active : " ")}
+    >
+      Events
+    </NavLink>
+  </li>
+  <li>
+    <NavLink
+      to={"/newsletter"}
+      className={({ isActive }) => (isActive ? classes.active : " ")}
+    >
+      NewsLetter
+    </NavLink>
+  </li>
+</ul>
+
+<NewsletterSignup />
+</nav> */
+}

@@ -5,7 +5,6 @@ import {
   useSubmit,
   redirect,
 } from "react-router-dom";
-import EventNavigation from "../components/eventsNavigation";
 import classes from "./eventDetailPage.module.css";
 function EventDetailPage() {
   const data = useRouteLoaderData("editDetailId");
@@ -20,7 +19,6 @@ function EventDetailPage() {
 
   return (
     <>
-      <EventNavigation />
       <article className={classes.container}>
         <div className={classes.event_box}>
           <img src={event.image} alt={event.title} />
@@ -50,12 +48,12 @@ export async function loader({ request, params }) {
   const id = params.eventId;
   console.log(id);
 
-  const response = await fetch(`http://localhost:8080/events/` + id);
+  const response = await fetch(`http://localhost:8080/eventss/` + id);
 
   if (!response.ok) {
     throw json(
       { message: "Could not fetch the selected event! Try again later." },
-      { status: 404 }
+      { status: 500 }
     );
   } else {
     return response;
@@ -76,5 +74,5 @@ export async function action({ request, params }) {
     );
   }
 
-  return redirect("/events");
+  return redirect("events");
 }

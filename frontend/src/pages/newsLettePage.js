@@ -5,7 +5,6 @@ import classes from "./newsLetterPage.module.css";
 function NewsLetterPage() {
   return (
     <>
-      <MianNavigation />
       <div className={classes.newsletter_box}>
         <h1>Join our awesome newsletter!</h1>
         <NewsletterSignup />

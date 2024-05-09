@@ -10,7 +10,8 @@ function ErrorPage() {
   if (error.status === 404) {
     title = "NOt found!";
     message = "Could not find resource or page";
-  } else if (error.status === 500) {
+  }
+  if (error.status === 500) {
     message = error.message;
   }
 

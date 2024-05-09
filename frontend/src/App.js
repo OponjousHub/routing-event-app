@@ -39,6 +39,7 @@ const router = createBrowserRouter([
             path: "new",
             element: <NewEventPage />,
             action: manipulatedEventAction,
+            children: [{ path: "new", element: <NewEventPage /> }],
           },
           {
             path: ":eventId",
