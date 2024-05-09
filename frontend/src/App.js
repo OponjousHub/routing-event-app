@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             id: "editDetailId",
             children: [
               {
-                path: "",
+                index: true,
                 element: <EventDetailPage />,
                 action: deleteAction,
               },
