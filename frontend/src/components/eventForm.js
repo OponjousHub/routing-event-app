@@ -1,9 +1,17 @@
-import { json, redirect, Form, Link } from "react-router-dom";
+import { json, redirect, Form, Link, useActionData } from "react-router-dom";
 import classes from "./eventForm.module.css";
 
 function EventForm({ event, method }) {
+  const data = useActionData();
+  console.log(data);
+
   return (
     <Form method={method} className={classes.form_box}>
+      {data && data.errors && (
+        <ul>
+          {Object.values(data.errors.map((err) => <li key={err}>{err}</li>))}
+        </ul>
+      )}
       <div>
         <label htmlFor="title">Title</label>
         <input
@@ -11,7 +19,7 @@ function EventForm({ event, method }) {
           name="title"
           type="text"
           defaultValue={event ? event.title : ""}
-          required
+          // required
         />
       </div>
       <div>
@@ -20,7 +28,7 @@ function EventForm({ event, method }) {
           id="image"
           name="image"
           defaultValue={event ? event.image : ""}
-          required
+          // required
         />
       </div>
       <div>
@@ -30,7 +38,7 @@ function EventForm({ event, method }) {
           type="date"
           name="date"
           defaultValue={event ? event.date : ""}
-          required
+          // required
         />
       </div>
       <div>
@@ -40,7 +48,7 @@ function EventForm({ event, method }) {
           name="description"
           rows={5}
           defaultValue={event ? event.description : ""}
-          required
+          // required
         ></textarea>
       </div>
       <p className={classes.form_button}>
@@ -74,7 +82,11 @@ export async function action({ request, params }) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(enteredData),
   });
-  console.log(response);
+
+  if (response.status === 422) {
+    return response;
+  }
+
   if (!response.ok)
     throw json(
       { message: "Could not save the event! Please try again later." },
