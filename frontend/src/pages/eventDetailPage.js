@@ -48,7 +48,7 @@ export async function loader({ request, params }) {
   const id = params.eventId;
   console.log(id);
 
-  const response = await fetch(`http://localhost:8080/eventss/` + id);
+  const response = await fetch(`http://localhost:8080/events/` + id);
 
   if (!response.ok) {
     throw json(

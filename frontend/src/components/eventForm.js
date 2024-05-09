@@ -78,7 +78,7 @@ export async function action({ request, params }) {
   if (!response.ok)
     throw json(
       { message: "Could not save the event! Please try again later." },
-      { status: 500 }
+      { status: 501 }
     );
 
   return redirect("/events");

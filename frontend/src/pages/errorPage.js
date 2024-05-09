@@ -3,6 +3,7 @@ import { useRouteError } from "react-router-dom";
 import classes from "./errorPage.module.css";
 function ErrorPage() {
   const error = useRouteError();
+  console.log(error);
 
   let title = "An error has occured!";
   let message = "something went wrong";
@@ -12,7 +13,7 @@ function ErrorPage() {
     message = "Could not find resource or page";
   }
   if (error.status === 500) {
-    message = error.message;
+    message = error.data.message;
   }
 
   return (
