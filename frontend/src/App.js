@@ -46,14 +46,26 @@ const router = createBrowserRouter([
             id: "editDetailId",
             children: [
               {
-                index: true,
+                path: "",
                 element: <EventDetailPage />,
                 action: deleteAction,
+              },
+              {
+                path: "new",
+                element: <NewEventPage />,
+                action: manipulatedEventAction,
               },
               {
                 path: "edit",
                 element: <EditEventPage />,
                 action: manipulatedEventAction,
+                children: [
+                  {
+                    path: "new",
+                    element: <NewEventPage />,
+                    action: manipulatedEventAction,
+                  },
+                ],
               },
             ],
           },

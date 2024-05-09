@@ -20,6 +20,8 @@ export async function action({ request }) {
   const data = await request.formData();
   const email = data.get("email");
   console.log(email);
+  // data.get("email").values = "";
+
   ///////
   // SEND THE EMAIL INPUT TO THE BACKEND
   ////////
