@@ -13,7 +13,9 @@ import EventRootLayout from "./pages/eventRootLayout";
 import RootLayout from "./pages/RootLayout";
 import EventList, { loader as eventsLoader } from "./pages/eventListPage";
 import { action as manipulatedEventAction } from "./components/eventForm";
-import Authentication from "./pages/authenticationPaage";
+import Authentication, {
+  action as authLoader,
+} from "./pages/authenticationPaage";
 import ErrorPage from "./pages/errorPage";
 
 import "./App.css";
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
         element: <NewsLetterPage />,
         action: newsLetterAction,
       },
-      { path: "/auth", element: <Authentication /> },
+      { path: "/auth", element: <Authentication />, action: authLoader },
       {
         path: "/events",
         element: <EventRootLayout />,

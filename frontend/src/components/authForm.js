@@ -1,11 +1,11 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams, Form } from "react-router-dom";
 import classes from "./authForm.module.css";
 
 function AuthForm() {
   const [searchParams] = useSearchParams();
   const isLogin = searchParams.get("mode") === "login";
   return (
-    <form method="post" className={classes.form}>
+    <Form method="post" className={classes.form}>
       <h1 className={classes.title}>{isLogin ? "Login" : "Create new user"}</h1>
       <p className={classes.input}>
         <label htmlFor="email">Email</label>
@@ -24,7 +24,7 @@ function AuthForm() {
         </Link>
         <button className={classes.save}>Save</button>
       </p>
-    </form>
+    </Form>
   );
 }
 
