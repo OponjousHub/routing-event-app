@@ -31,6 +31,14 @@ function MianNavigation() {
             NewsLetter
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to={"/auth"}
+            className={({ isActive }) => (isActive ? classes.active : " ")}
+          >
+            Authentication
+          </NavLink>
+        </li>
       </ul>
 
       <NewsletterSignup />
